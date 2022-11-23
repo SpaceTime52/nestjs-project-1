@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { Order } from 'src/entities/order/order.entity';
 
 @Injectable()
 export class OrderService {
@@ -6,12 +7,19 @@ export class OrderService {
   //   return 'This action adds a new order';
   // }
 
-  findAll() {
-    return `This action returns all order`;
+  findAll(): Order[] {
+    const order_1: Order = new Order();
+    const order_2: Order = new Order();
+    order_1.merchandiseId = 3;
+    order_2.merchandiseId = 4;
+    return [order_1, order_2];
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} order`;
+  findOne(id: number): Order {
+    const order_1: Order = new Order();
+    order_1.id = 1;
+    order_1.merchandiseId = 1;
+    return order_1;
   }
 
   // update(id: number, updateOrderInput: UpdateOrderInput) {

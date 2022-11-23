@@ -11,13 +11,15 @@ export class OrderResolver {
   //   return this.orderService.create(createOrderInput);
   // }
 
-  @Query(() => [Order], { name: 'order' })
+  @Query(() => [Order], { name: 'allOrders' })
   findAll() {
+    console.log('allOrders serviced!');
     return this.orderService.findAll();
   }
 
-  @Query(() => Order, { name: 'order' })
+  @Query(() => Order, { name: 'orderById' })
   findOne(@Args('id', { type: () => Int }) id: number) {
+    console.log('orderById serviced!');
     return this.orderService.findOne(id);
   }
 

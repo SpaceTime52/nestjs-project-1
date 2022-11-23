@@ -66,23 +66,8 @@ type Query {
   merchandiseById(id: Int!): Merchandise!
   allCategories: [Category!]!
   categoryById(id: Int!): Category!
-  order(id: Int!): Order!
-  delivery(id: Int!): Delivery!
-}
-
-type Mutation {
-  createDelivery(createDeliveryInput: CreateDeliveryInput!): Delivery!
-  updateDelivery(updateDeliveryInput: UpdateDeliveryInput!): Delivery!
-  removeDelivery(id: Int!): Delivery!
-}
-
-input CreateDeliveryInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
-}
-
-input UpdateDeliveryInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
+  allOrders: [Order!]!
+  orderById(id: Int!): Order!
+  allDeliveries: [Delivery!]!
+  deliveryById(id: Int!): Delivery!
 }
