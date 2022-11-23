@@ -1,19 +1,47 @@
+import { ObjectType, Field } from '@nestjs/graphql';
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Delivery } from '../delivery/delivery.entity';
+import { OrderedMerchandise } from '../orderedMerchandise/orderedMerchandise.entity';
+import { PaymentInfo } from '../paymentInfo/paymentInfo.entity';
 
+enum OrderStatus {
+  UNPAID = 'UNPAID',
+  PAID = 'PAID',
+  SHIPPING = 'SHIPPING',
+}
+
+@ObjectType()
 @Entity('order')
 export class Order {
+  @Field()
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column('int')
+  @Field()
+  @Column()
   merchandiseId: number;
 
-  @Column('text')
-  merchandiseName: string;
+  @Field()
+  @Column()
+  status: OrderStatus;
 
-  @Column('int')
-  quantity: number;
+  @Field(() => [OrderedMerchandise])
+  @Column()
+  orderedMerchandises: OrderedMerchandise[];
 
-  @Column('int')
-  paidPrice: number;
+  @Field()
+  @Column()
+  paymentInfo: PaymentInfo;
+
+  @Field()
+  @Column()
+  delivery: Delivery;
+
+  @Field(() => Date)
+  @Column()
+  createdAt: Date;
+
+  @Field(() => Date)
+  @Column()
+  updatedAt: Date;
 }
