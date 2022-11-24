@@ -12,14 +12,14 @@ type Category {
   name: String!
 }
 
-type Order {
-  id: Float!
-  merchandiseId: Float!
-}
-
 type Delivery {
   id: Float!
   orderId: Float!
+}
+
+type Order {
+  id: Float!
+  merchandiseId: Float!
 }
 
 type Query {
@@ -34,10 +34,28 @@ type Query {
 }
 
 type Mutation {
+  createMerchandise(createMerchandiseInput: CreateMerchandiseInput!): Merchandise!
   createCategory(createCategoryInput: CreateCategoryInput!): Category!
+  createOrder(createOrderInput: CreateOrderInput!): Order!
+  createDelivery(createDeliveryInput: CreateDeliveryInput!): Delivery!
+}
+
+input CreateMerchandiseInput {
+  id: Int!
+  name: String!
 }
 
 input CreateCategoryInput {
   id: Int!
   name: String!
+}
+
+input CreateOrderInput {
+  id: Float!
+  merchandiseId: Float!
+}
+
+input CreateDeliveryInput {
+  id: Float!
+  orderId: Float!
 }

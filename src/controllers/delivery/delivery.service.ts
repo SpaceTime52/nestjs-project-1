@@ -1,11 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { Delivery } from 'src/entities/delivery/delivery.entity';
+import { CreateDeliveryInput } from './dto/create-delivery.input';
 
 @Injectable()
 export class DeliveryService {
-  // create(createDeliveryInput: CreateDeliveryInput) {
-  //   return 'This action adds a new delivery';
-  // }
+  create(createDeliveryInput: CreateDeliveryInput) {
+    return createDeliveryInput;
+  }
 
   findAll(): Delivery[] {
     const delivery_1: Delivery = new Delivery();

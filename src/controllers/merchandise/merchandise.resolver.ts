@@ -1,18 +1,18 @@
-import { Resolver, Query, Args, Int } from '@nestjs/graphql';
+import { Resolver, Query, Args, Int, Mutation } from '@nestjs/graphql';
 import { MerchandiseService } from './merchandise.service';
 import { Merchandise } from '../../entities/merchandise/merchandise.entity';
-// import { UpdateMerchandiseInput } from './dto/update-merchandise.input';
+import { CreateMerchandiseInput } from './dto/create-merchandise.input';
 
 @Resolver(() => Merchandise)
 export class MerchandiseResolver {
   constructor(private readonly merchandiseService: MerchandiseService) {}
 
-  // @Mutation(() => Merchandise)
-  // createMerchandise(
-  //   @Args('createMerchandiseInput') createMerchandiseInput: CreateMerchandiseInput,
-  // ) {
-  //   return this.merchandiseService.create(createMerchandiseInput);
-  // }
+  @Mutation(() => Merchandise)
+  createMerchandise(
+    @Args('createMerchandiseInput') createMerchandiseInput: CreateMerchandiseInput,
+  ) {
+    return this.merchandiseService.create(createMerchandiseInput);
+  }
 
   @Query(() => [Merchandise], { name: 'allMerchandises' })
   findAll(): Merchandise[] {

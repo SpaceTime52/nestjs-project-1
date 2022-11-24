@@ -1,11 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { Order } from 'src/entities/order/order.entity';
+import { CreateOrderInput } from './dto/create-order.input';
 
 @Injectable()
 export class OrderService {
-  // create(createOrderInput: CreateOrderInput) {
-  //   return 'This action adds a new order';
-  // }
+  create(createOrderInput: CreateOrderInput) {
+    return createOrderInput;
+  }
 
   findAll(): Order[] {
     const order_1: Order = new Order();

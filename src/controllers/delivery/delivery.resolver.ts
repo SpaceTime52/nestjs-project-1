@@ -1,15 +1,16 @@
-import { Resolver, Query, Args, Int } from '@nestjs/graphql';
+import { Resolver, Query, Args, Int, Mutation } from '@nestjs/graphql';
 import { DeliveryService } from './delivery.service';
 import { Delivery } from '../../entities/delivery/delivery.entity';
+import { CreateDeliveryInput } from './dto/create-delivery.input';
 
 @Resolver(() => Delivery)
 export class DeliveryResolver {
   constructor(private readonly deliveryService: DeliveryService) {}
 
-  // @Mutation(() => Delivery)
-  // createDelivery(@Args('createDeliveryInput') createDeliveryInput: CreateDeliveryInput) {
-  //   return this.deliveryService.create(createDeliveryInput);
-  // }
+  @Mutation(() => Delivery)
+  createDelivery(@Args('createDeliveryInput') createDeliveryInput: CreateDeliveryInput) {
+    return this.deliveryService.create(createDeliveryInput);
+  }
 
   @Query(() => [Delivery], { name: 'allDeliveries' })
   findAll() {

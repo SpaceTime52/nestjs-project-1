@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { Merchandise } from 'src/entities/merchandise/merchandise.entity';
-// import { CreateMerchandiseInput } from './dto/create-merchandise.input';
+import { CreateMerchandiseInput } from './dto/create-merchandise.input';
 // import { UpdateMerchandiseInput } from './dto/update-merchandise.input';
 
 @Injectable()
 export class MerchandiseService {
-  // create(createMerchandiseInput: CreateMerchandiseInput) {
-  //   return 'This action adds a new merchandise';
-  // }
+  create(createMerchandiseInput: CreateMerchandiseInput) {
+    return createMerchandiseInput;
+  }
 
   findAll(): Merchandise[] {
     const merchandise_1: Merchandise = new Merchandise();
