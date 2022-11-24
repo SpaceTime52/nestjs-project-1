@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { Category } from 'src/entities/category/category.entity';
-// import { CreateCategoryInput } from './dto/create-category.input';
+import { CreateCategoryInput } from './dto/create-category.input';
 // import { UpdateCategoryInput } from './dto/update-category.input';
 
 @Injectable()
 export class CategoryService {
-  // create(createCategoryInput: CreateCategoryInput) {
-  //   return 'This action adds a new category';
-  // }
+  create(createCategoryInput: CreateCategoryInput) {
+    return createCategoryInput;
+  }
 
   findAll(): Category[] {
     const category_1: Category = new Category();

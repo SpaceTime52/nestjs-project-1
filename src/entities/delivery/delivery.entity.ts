@@ -11,16 +11,4 @@ export class Delivery {
   @Field()
   @Column('int')
   orderId: number;
-
-  @Field()
-  @Column('text')
-  address: string;
-
-  @Field()
-  @Column('text')
-  telNumber: string;
-
-  @Field()
-  @Column('text')
-  currentLocation: string;
 }

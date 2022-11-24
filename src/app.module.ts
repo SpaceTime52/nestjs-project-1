@@ -16,8 +16,6 @@ import { OrderModule } from './controllers/order/order.module';
 import { DeliveryModule } from './controllers/delivery/delivery.module';
 import { OrderService } from './controllers/order/order.service';
 import { DeliveryService } from './controllers/delivery/delivery.service';
-import { OrderedMerchandiseModule } from './entities/orderedMerchandise/orderedMerchandise.module';
-import { PaymentInfoModule } from './entities/paymentInfo/paymentInfo.module';
 
 @Module({
   imports: [
@@ -41,8 +39,6 @@ import { PaymentInfoModule } from './entities/paymentInfo/paymentInfo.module';
     CategoryModule,
     OrderModule,
     DeliveryModule,
-    OrderedMerchandiseModule,
-    PaymentInfoModule,
   ],
   controllers: [AppController],
   providers: [

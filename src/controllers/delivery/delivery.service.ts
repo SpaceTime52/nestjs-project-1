@@ -10,15 +10,15 @@ export class DeliveryService {
   findAll(): Delivery[] {
     const delivery_1: Delivery = new Delivery();
     const delivery_2: Delivery = new Delivery();
-    delivery_1.address = '서울';
-    delivery_2.address = '서울 중구';
+    delivery_1.orderId = 3;
+    delivery_2.orderId = 4;
     return [delivery_1, delivery_2];
   }
 
   findOne(id: number): Delivery {
     const delivery_1: Delivery = new Delivery();
     delivery_1.id = 1;
-    delivery_1.address = '서울';
+    delivery_1.orderId = 5;
     return delivery_1;
   }
 
