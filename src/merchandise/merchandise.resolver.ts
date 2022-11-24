@@ -1,6 +1,6 @@
 import { Resolver, Query, Args, Int, Mutation } from '@nestjs/graphql';
 import { MerchandiseService } from './merchandise.service';
-import { Merchandise } from '../../entities/merchandise/merchandise.entity';
+import { Merchandise } from './merchandise.entity';
 import { CreateMerchandiseInput } from './dto/create-merchandise.input';
 
 @Resolver(() => Merchandise)

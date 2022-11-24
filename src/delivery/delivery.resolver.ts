@@ -1,6 +1,6 @@
 import { Resolver, Query, Args, Int, Mutation } from '@nestjs/graphql';
 import { DeliveryService } from './delivery.service';
-import { Delivery } from '../../entities/delivery/delivery.entity';
+import { Delivery } from './delivery.entity';
 import { CreateDeliveryInput } from './dto/create-delivery.input';
 
 @Resolver(() => Delivery)

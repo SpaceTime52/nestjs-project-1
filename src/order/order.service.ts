@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Order } from 'src/entities/order/order.entity';
+import { Order } from 'src/order/order.entity';
 import { CreateOrderInput } from './dto/create-order.input';
 
 @Injectable()

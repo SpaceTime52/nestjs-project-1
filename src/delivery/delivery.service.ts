@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Delivery } from 'src/entities/delivery/delivery.entity';
+import { Delivery } from 'src/delivery/delivery.entity';
 import { CreateDeliveryInput } from './dto/create-delivery.input';
 
 @Injectable()

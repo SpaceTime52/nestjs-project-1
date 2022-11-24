@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Merchandise } from 'src/entities/merchandise/merchandise.entity';
+import { Merchandise } from 'src/merchandise/merchandise.entity';
 import { CreateMerchandiseInput } from './dto/create-merchandise.input';
 // import { UpdateMerchandiseInput } from './dto/update-merchandise.input';
 

@@ -3,6 +3,7 @@
 /node_modules
 /temp_no_use
 .env
+.vscode
 
 # Logs
 logs
